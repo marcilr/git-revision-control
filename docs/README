@@ -5,3 +5,8 @@ Copyright (C) 2019 by Raymond E. Marcil <marcilr@gmail.com>
 
 Filelist
 ========
+config.txt
+  Git configuration items:
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
