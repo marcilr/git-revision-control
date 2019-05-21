@@ -1,0 +1,25 @@
+partial-commit-during-a-merge.txt
+Created Mon May 13 11:12:03 AKDT 2019
+Copyright (C) 2019 by Raymond E. Marcil <marcilr@gmail.com>
+
+
+On commit if you get:
+  fatal: cannot do a partial commit during a merge.
+
+Resolve with:
+  I found that adding "-i" to the commit command fixes
+  this problem for me.  The -i basically tells it to
+  stage additional files before committing. That is:
+
+  git commit -i myfile.php
+
+  --answered Nov 9 '11 at 9:39
+    MikaelHalen
+    stackoverflow.com/questions/5827944
+
+
+Links
+=====
+Git error on commit after merge - \
+fatal: cannot do a partial commit during a merge
+https://stackoverflow.com/questions/5827944/git-error-on-commit-after-merge-fatal-cannot-do-a-partial-commit-during-a-mer
