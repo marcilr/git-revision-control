@@ -10,3 +10,5 @@ config.txt
     git config --global user.name "Your Name"
     git config --global user.email you@example.com
 
+set-default-text-editor.txt
+  Set default text editor for git
