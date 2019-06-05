@@ -15,25 +15,135 @@
 #   ssh://dnratwtfsp/IRMJava/_git/quux
 #
 
+# =============
+# Configuration
+# =============
+
+#
+# Enable/disable debugging
+# Set 1 or higher for debugging output
+#
+DEBUG=1
+
+
+# Logfile
+LOGFILE=/var/tmp/convert/convert.log
+
+
+# ========
+# Binaries
+# ========
+AWK=/usr/bin/awk
+CAT=/bin/cat
+CUT=/usr/bin/cut
+DATE=/bin/date
+DIRNAME=/usr/bin/dirname
+EGREP=/bin/egrep
+FIND=/usr/bin/find
+GIT="/usr/bin/git"
+GREP=/bin/grep
+LS=/bin/ls
+MKDIR=/bin/mkdir
+RM="/bin/rm -rf"
+SED=/bin/sed
+SVN=/usr/bin/svn
+SVNLOOK="/usr/bin/svnlook"
+
+
+ Functions
+# =========
+
+
+#
+# debug()
+#
+debug() {
+  TIME=`${DATE} "+%F %H:%M:%S"`
+  if [ "${DEBUG}" != "0" ]; then
+    echo "debug() ${TIME} ${1}" >> ${LOGFILE}
+  fi
+
+}   # debug()
+
+
+#
+# getRepoStatus()
+#
+# INPUT:
+#   Message to display
+#   URL of repo to check (ssh://)
+#
+# RETURNS:
+#   CASE=1  repo with files
+#   CASE=1  repo with no files
+#   CASE=3  non-existent repo
+#
+getRepoStatus() {
+    debug "getRepoStatus() *** START ***"
+
+    debug "getRepoStatus() MESSAGE: ${MESSAGE}"
+    debug "getRepoStatus() URL:     ${URL}" 
+
+    # Git remote listing of files
+    RESULT1=`git ls-remote -q ${URL} | grep HEAD`
+    debug "getRepoStatus() RESULT1:     Has 'HEAD' string"
+    debug "getRepoStatus() RESULT1:     ${RESULT1}"
+
+    #
+    # Remote listing of files with redirect
+    # to allow catching "Could not read" error.
+    #
+    RESULT2=`git ls-remote -q ${URL} 2>&1>/dev/null | grep "Could not read"`
+    debug "getRepoStatus() RESULT2: ${RESULT2}"
+    
+    debug "getRepoStatus *** END ***"
+}   # getRepoStatus
+
+# ================================================
+# Main
+# ================================================
+debug "main: *** START ***"
+
+
+# Query non-existent repo
+if [ git ls-remote -q ssh://dnratwtfsp/IRMJava/_git/quux 2>&1>/dev/null | grep "Could not read" ]; then
+  debug "main: non-existent repo"
+  CASE+="3"
+fi
+
+debug "main: CASE=${CASE}"
+
+#
 # Repo with files
+# ssh://dnratwtfsp/IRMJava/_git/akwuds
+#
 URL="ssh://dnratwtfsp/IRMJava/_git/akwuds"
-echo "URL: ${URL}"
-RESULT=`git ls-remote -q ${URL}`
-echo "RESULT: '$RESULT'"
-echo
+MESSAGE="Repo with files"
+getRepoStatus
+#debug "main: URL: ${URL}"
+#debug "main: CASE=${CASE}"
 
+#
 # Repo with no files
+# ssh://dnratwtfsp/IRMJava/_git/MapAK
+#
 URL="ssh://dnratwtfsp/IRMJava/_git/MapAK"
-echo "URL: ${URL}"
-RESULT=`git ls-remote -q ${URL}`
-echo "RESULT: '$RESULT'"
-echo
+MESSAGE="Repo with no files"
+CASE=""
+getRepoStatus
+#debug "main: URL: ${URL}"
+#debug "main: CASE=${CASE}"
 
-# Non-existent repo:
-# Redirection always for assignment to variable.
+#
+# Non-existent repo with no files
+# ssh://dnratwtfsp/IRMJava/_git/quux
+#
 URL="ssh://dnratwtfsp/IRMJava/_git/quux"
-echo "URL: ${URL}"
-RESULT=`git ls-remote -q ${URL} 2>&1`
-echo "RESULT: '$RESULT'"
-echo
+MESSAGE="Non-existent repo"
+CASE=""
+getRepoStatus
+#debug "main: URL: ${URL}"
+#debug "main: CASE=${CASE}"
 
+
+debug "main: *** END ***"
