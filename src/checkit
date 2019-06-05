@@ -1,0 +1,39 @@
+#!/bin/bash
+# checkit
+# Created Wed Jun  5 11:54:16 AKDT 2019
+# by Raymond E. Marcil <ray.marcil@alaska.gov>
+#
+# Check existing repository with files:
+#
+# Repo with files:
+#   ssh://dnratwtfsp/IRMJava/_git/akwuds
+#
+# Repo with no files
+#   ssh://dnratwtfsp/IRMJava/_git/MapAK"
+#
+# No repo:
+#   ssh://dnratwtfsp/IRMJava/_git/quux
+#
+
+# Repo with files
+URL="ssh://dnratwtfsp/IRMJava/_git/akwuds"
+echo "URL: ${URL}"
+RESULT=`git ls-remote -q ${URL}`
+echo "RESULT: '$RESULT'"
+echo
+
+# Repo with no files
+URL="ssh://dnratwtfsp/IRMJava/_git/MapAK"
+echo "URL: ${URL}"
+RESULT=`git ls-remote -q ${URL}`
+echo "RESULT: '$RESULT'"
+echo
+
+# Non-existent repo:
+# Redirection always for assignment to variable.
+URL="ssh://dnratwtfsp/IRMJava/_git/quux"
+echo "URL: ${URL}"
+RESULT=`git ls-remote -q ${URL} 2>&1`
+echo "RESULT: '$RESULT'"
+echo
+
