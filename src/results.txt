@@ -1,0 +1,88 @@
+README
+Created Wed Jun  5 13:19:33 AKDT 2019
+Copyright (C) 2019 by Raymond E. Marcil <marcilr@gmail.com>
+
+Results from repo checks with checkit script
+
+
+Adding the -q parameter to suppress error always
+passing git ls-remote results to git:
+
+
+Repo with files
+===============
+$ git ls-remote -q ssh://dnratwtfsp/IRMJava/_git/akwuds | grep HEAD
+25f68ec1fca8e22867fad910239bebb2fab9cd23	HEAD
+$
+
+
+Repo with no files
+==================
+$ git ls-remote -q ssh://dnratwtfsp/IRMJava/_git/MapAK
+$
+
+
+Non-existent repo
+=================
+$ git ls-remote -q ssh://dnratwtfsp/IRMJava/_git/quux | grep HEAD
+remote:
+remote: Your Git command did not succeed.
+remote: Details:
+remote:     TF200016: The following project does not exist: \
+quux. Verify that the name of the project is correct and \
+that the project exists on the specified Team Foundation Server.
+remote:
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+$
+
+
+
+
+Repo with files
+===============
+$ git ls-remote ssh://dnratwtfsp/IRMJava/_git/akwuds
+25f68ec1fca8e22867fad910239bebb2fab9cd23	HEAD
+25f68ec1fca8e22867fad910239bebb2fab9cd23	refs/heads/master
+$
+
+
+Repo with no files
+==================
+$ git ls-remote ssh://dnratwtfsp/IRMJava/_git/MapAK
+$
+
+
+Non-existing repo
+=================
+$ git ls-remote ssh://dnratwtfsp/IRMJava/_git/quux
+remote:
+remote: Your Git command did not succeed.
+remote: Details:
+remote:     TF200016: The following project does not exist: \
+quux. Verify that the name of the project is correct and \
+that the project exists on the specified Team Foundation Server.
+remote:
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+$ 
+
+
+
+Filelist
+========
+checkit
+  Check existing repository with files:
+
+  Repo with files:
+    ssh://dnratwtfsp/IRMJava/_git/akwuds
+
+  Repo with no files
+    ssh://dnratwtfsp/IRMJava/_git/MapAK"
+
+  No repo:
+    ssh://dnratwtfsp/IRMJava/_git/quux
