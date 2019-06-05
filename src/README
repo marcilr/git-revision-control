@@ -3,59 +3,6 @@ Created Wed Jun  5 11:47:19 AKDT 2019
 Copyright (C) 2019 by Raymond E. Marcil <marcilr@gmail.com>
 
 
-Adding the -q parameter to suppress error always
-passing git ls-remote results to git:
-
-
-Against repo with files:
-$ git ls-remote -q ssh://dnratwtfsp/IRMJava/_git/akwuds | grep HEAD
-25f68ec1fca8e22867fad910239bebb2fab9cd23	HEAD
-$
-
-Query existing empty repo with no files:
-$ git ls-remote -q ssh://dnratwtfsp/IRMJava/_git/MapAK
-$
-
-Against non-existent repo:
-$ git ls-remote -q ssh://dnratwtfsp/IRMJava/_git/quux | grep HEAD
-remote:
-remote: Your Git command did not succeed.
-remote: Details:
-remote: 	TF200016: The following project does not exist: quux. Verify that the name of the project is correct and that the project exists on the specified Team Foundation Server.
-remote:
-fatal: Could not read from remote repository.
-
-Please make sure you have the correct access rights
-and the repository exists.
-$
-
-
-
-
-Query existing repo with files:
-$ git ls-remote ssh://dnratwtfsp/IRMJava/_git/akwuds
-25f68ec1fca8e22867fad910239bebb2fab9cd23	HEAD
-25f68ec1fca8e22867fad910239bebb2fab9cd23	refs/heads/master
-$
-
-Query existing empty repo with no files:
-$ git ls-remote ssh://dnratwtfsp/IRMJava/_git/MapAK
-$
-
-Query non-existing repo:
-$ git ls-remote ssh://dnratwtfsp/IRMJava/_git/quux
-remote:
-remote: Your Git command did not succeed.
-remote: Details:
-remote: 	TF200016: The following project does not exist: quux. Verify that the name of the project is correct and that the project exists on the specified Team Foundation Server.
-remote:
-fatal: Could not read from remote repository.
-
-Please make sure you have the correct access rights
-and the repository exists.
-$ 
-
-
 
 Filelist
 ========
@@ -70,4 +17,7 @@ checkit
 
   No repo:
     ssh://dnratwtfsp/IRMJava/_git/quux
+
+results.txt
+  Results of checkit script
 
