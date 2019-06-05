@@ -1,0 +1,49 @@
+ls-remote.txt
+Created Wed Jun  5 09:36:55 AKDT 2019
+Copyright (C) 2019 by Raymond E. Marcil <marcilr@gmail.com>
+
+
+ls-remote
+
+
+Can be used to list the contents or verify a remote
+repository.
+
+
+Examples
+========
+Remote apps repo exists with files:
+
+$ git ls-remote ssh://dnratwtfsp:22/Sandboxes/_git/apps
+a9e3ed742b74bcfb65579a54500221e4ab4acad5	HEAD
+a9e3ed742b74bcfb65579a54500221e4ab4acad5	refs/heads/master
+$ 
+
+
+Remote DBRS repo exists with no files:
+$ git ls-remote ssh://dnratwtfsp/IRMJava/_git/DBRS
+$
+
+
+Remote quux repo does not exist:
+
+$ git ls-remote ssh://dnratwtfsp:22/Sandboxes/_git/quux
+remote:
+remote: Your Git command did not succeed.
+remote: Details:
+remote: 	TF200016: The following project does not exist: \
+quux. Verify that the name of the project is correct and that \
+the project exists on the specified Team Foundation Server.
+remote:
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+$
+
+
+Links
+=====
+git-ls-remote(1) Manual Page
+git-ls-remote - List references in a remote repository
+https://mirrors.edge.kernel.org/pub/software/scm/git/docs/git-ls-remote.html
