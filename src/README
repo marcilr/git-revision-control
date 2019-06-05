@@ -59,4 +59,15 @@ $
 
 Filelist
 ========
+checkit
+  Check existing repository with files:
+
+  Repo with files:
+    ssh://dnratwtfsp/IRMJava/_git/akwuds
+
+  Repo with no files
+    ssh://dnratwtfsp/IRMJava/_git/MapAK"
+
+  No repo:
+    ssh://dnratwtfsp/IRMJava/_git/quux
 
