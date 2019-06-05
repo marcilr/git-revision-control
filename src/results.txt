@@ -1,8 +1,9 @@
-README
+results.txt
 Created Wed Jun  5 13:19:33 AKDT 2019
-Copyright (C) 2019 by Raymond E. Marcil <marcilr@gmail.com>
+by Raymond E. Marcil <ray,marcil@alaska.gov>
 
-Results from repo checks with checkit script
+
+Results of checkit script
 
 
 Adding the -q parameter to suppress error always
