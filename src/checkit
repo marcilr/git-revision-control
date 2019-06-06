@@ -50,9 +50,9 @@ SVN=/usr/bin/svn
 SVNLOOK="/usr/bin/svnlook"
 
 
- Functions
 # =========
-
+# Functions
+# =========
 
 #
 # debug()
