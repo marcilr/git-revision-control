@@ -5,6 +5,10 @@ Copyright (C) 2019 by Raymond E. Marcil <marcilr@gmail.com>
 
 Filelist
 ========
+ls-remote.txt
+  Can be used to list the contents or verify a remote
+  repository.
+
 partial-commit-during-a-merge.txt
   On commit if you get:
     fatal: cannot do a partial commit during a merge.
