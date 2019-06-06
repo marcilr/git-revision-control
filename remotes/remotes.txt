@@ -1,0 +1,7 @@
+remotes.txt
+Created Thu Jun  6 07:16:32 AKDT 2019
+Copyright (C) 2019 by Raymond E. Marcil <marcilr@gmail.com>
+
+
+Remotes
+
