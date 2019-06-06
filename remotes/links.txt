@@ -8,6 +8,11 @@ Remote related links
 
 Links
 =====
+Git Basics - Working with Remotes
+gti --local-branching-on-the-cheap
+https://git-scm.com/docs/git-ls-remote.html
+
+
 How to Add a New Remote to your Git Repo
 Written by Shabbir
 https://articles.assembla.com/using-git/how-to-add-a-new-remote-to-your-git-repo
