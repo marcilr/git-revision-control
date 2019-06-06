@@ -94,10 +94,12 @@ getRepoStatus() {
     # to allow catching "Could not read" error.
     #
     RESULT2=`git ls-remote -q ${URL} 2>&1>/dev/null | grep "Could not read"`
+    debug "getRepoStatus() RESULT2:     Has 'Could not read' string."
     debug "getRepoStatus() RESULT2: ${RESULT2}"
     
     debug "getRepoStatus *** END ***"
 }   # getRepoStatus
+
 
 # ================================================
 # Main
