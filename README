@@ -17,5 +17,8 @@ git.txt
 links.txt
   git related links
 
+remotes/
+  Remotes
+
 src/
   Source code
