@@ -5,6 +5,9 @@ Copyright (C) 2019 by Raymond E. Marcil <marcilr@gmail.com>
 
 Filelist
 ========
+links.txt
+  Syntax related links
+
 ls-remote.txt
   Can be used to list the contents or verify a remote
   repository.
