@@ -27,6 +27,17 @@ partial-commit-during-a-merge.txt
       MikaelHalen
       stackoverflow.com/questions/5827944
 
+push-origin.txt
+  git push origin master
+
+ "git remote add origin means to add a remote repository
+  named origin, which doesn't have any special technical
+  meaning, it's just a widely used default name for an
+  original remote repository. You can use foobar instead
+  of origin if you like."
+  --What's the meaning of 'origin' in 'git push origin master'
+    https://stackoverflow.com/questions/5270760/whats-the-meaning-of-origin-in-git-push-origin-master
+
 set-upstream.txt
   Use of:
     git push --set-upstream origin master
