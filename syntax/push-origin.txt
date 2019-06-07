@@ -1,0 +1,20 @@
+push-origin.txt
+Created Fri Jun  7 13:58:15 AKDT 2019
+Copyright (C) 2019 by Raymond E. Marcil <marcilr@gmail.com>
+
+
+git push origin master
+
+
+"git remote add origin means to add a remote repository
+named origin, which doesn't have any special technical
+meaning, it's just a widely used default name for an
+original remote repository. You can use foobar instead
+of origin if you like."
+--questions/5270760/
+
+Links
+=====
+What's the meaning of 'origin' in 'git push origin master'
+https://stackoverflow.com/questions/5270760/whats-the-meaning-of-origin-in-git-push-origin-master
+
