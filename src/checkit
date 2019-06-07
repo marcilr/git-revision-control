@@ -107,11 +107,13 @@ getRepoStatus() {
 debug "main: *** START ***"
 
 
+#
+# Breaking the build:
 # Query non-existent repo
-if [ git ls-remote -q ssh://dnratwtfsp/IRMJava/_git/quux 2>&1>/dev/null | grep "Could not read" ]; then
-  debug "main: non-existent repo"
-  CASE+="3"
-fi
+#if [ git ls-remote -q ssh://dnratwtfsp/IRMJava/_git/quux 2>&1>/dev/null | grep "Could not read" ]; then
+#  debug "main: non-existent repo"
+#  CASE+="3"
+#fi
 
 debug "main: CASE=${CASE}"
 
