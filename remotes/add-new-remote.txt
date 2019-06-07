@@ -1,0 +1,35 @@
+add-new-remote.txt
+Created Fri Jun  7 07:16:09 AKDT 2019
+Copyright (C) 2019 by Raymond E. Marcil <marcilr@gmail.com>
+
+
+
+Add new remote to git repo
+
+
+To add a new remote, use the git remote add command
+on the terminal, in the directory your repository is
+stored at.
+
+The git remote add command takes two arguments:
+o A remote name, for example, “origin”
+o A remote URL, which you can find on the Source sub-tab of your Git repo
+
+For example:
+  git remote add origin git@git.assembla.com:portfolio/space.space_name.git
+  #set a new remote
+
+  git remote -v
+  #Verify new remote
+  origin  git@git.assembla.com:portfolio/space.space_name.git (fetch)
+  origin  git@git.assembla.com:portfolio/space.space_name.git (push)
+
+--How to Add a New Remote to your Git Repo
+  assemble.com/
+
+
+Links
+=====
+How to Add a New Remote to your Git Repo
+by Shabbir avatar
+https://articles.assembla.com/using-git/how-to-add-a-new-remote-to-your-git-repo
