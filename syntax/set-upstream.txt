@@ -1,0 +1,31 @@
+set-upstream.txt
+Created Fri Jun  7 07:03:14 AKDT 2019
+Copyright (C) 2019 by Raymond E. Marcil <marcilr@gmail.com>
+
+
+Use of:
+  git push --set-upstream origin master
+
+For:
+  fatal: The current branch master has no upstream branch.
+
+
+$ git status
+On branch master
+nothing to commit, working tree clean
+remarcil@debian:~/git/find$ git push
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin master
+
+$ git push --set-upstream origin master
+Counting objects: 6, done.
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (6/6), 947 bytes | 0 bytes/s, done.
+Total 6 (delta 0), reused 0 (delta 0)
+To ssh://github.com/marcilr/find.git
+ * [new branch]      master -> master
+Branch master set up to track remote branch master from origin.
+$ 
+
