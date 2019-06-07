@@ -26,3 +26,10 @@ partial-commit-during-a-merge.txt
     --answered Nov 9 '11 at 9:39
       MikaelHalen
       stackoverflow.com/questions/5827944
+
+set-upstream.txt
+  Use of:
+    git push --set-upstream origin master
+
+  For:
+    fatal: The current branch master has no upstream branch.
