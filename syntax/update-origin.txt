@@ -1,0 +1,53 @@
+update-origin.txt
+Created Thu Jun 13 09:53:05 AKDT 2019
+Copyright (C) 2019 by Raymond E. Marcil <marcilr@gmail.com>
+
+
+Update origin of git repo
+
+
+Example
+=======
+Fix type: Update origin from useageservices to usageservices
+
+View incorrect (mispelled) origin:
+$ git remote -v
+origin	ssh://dnratwtfsp:22/IRMJava/_git/useageservices (fetch)
+origin	ssh://dnratwtfsp:22/IRMJava/_git/useageservices (push)
+$
+
+Remove origin:
+$ git remote rm origin
+$
+
+$ git remote -v
+$
+
+Add correctly spelled origin:
+$ git remote add origin ssh://dnratwtfsp:22/IRMJava/_git/usageservices
+$
+
+Inspect correct origin:
+$ git remote -v
+origin	ssh://dnratwtfsp:22/IRMJava/_git/usageservices (fetch)
+origin	ssh://dnratwtfsp:22/IRMJava/_git/usageservices (push)
+$
+
+
+Looks good.
+
+Push to State of Alaska DNR tfsp:
+$ git push origin master
+$ git push origin master
+Counting objects: 638, done.
+Compressing objects: 100% (475/475), done.
+Writing objects: 100% (638/638), 23.33 MiB | 7.26 MiB/s, done.
+Total 638 (delta 218), reused 0 (delta 0)
+remote: Analyzing objects... (638/638) (5802 ms)
+remote: Storing packfile... done (1947 ms)
+remote: Storing index... done (141 ms)
+To ssh://dnratwtfsp:22/IRMJava/_git/usageservices
+ * [new branch]      master -> master
+$
+
+Very good.
