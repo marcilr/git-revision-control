@@ -44,3 +44,7 @@ set-upstream.txt
 
   For:
     fatal: The current branch master has no upstream branch.
+
+update-origin.txt
+  Update origin of git repo
+
