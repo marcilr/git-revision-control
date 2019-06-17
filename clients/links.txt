@@ -1,0 +1,15 @@
+links.txt
+Created Mon Jun 17 07:34:49 AKDT 2019
+Copyright (C) 2019 by Raymond E. Marcil <marcilr@gmail.com>
+
+
+git client related links
+
+
+Links
+=====
+GUI Clients
+Git comes with built-in GUI tools for committing (git-gui)
+and browsing (gitk), but there are several third-party tools
+for users looking for platform-specific experience.
+https://git-scm.com/download/gui/windows
