@@ -17,6 +17,9 @@ git.txt
 links.txt
   git related links
 
+pdf/
+  Portable Document Format files
+
 remotes/
   Remotes
 
