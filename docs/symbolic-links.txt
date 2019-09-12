@@ -1,9 +1,9 @@
 symbolic-links.txt
 Created Thu Sep 12 08:30:29 AKDT 2019
-Copyright (C) 2019 by Raymond E. Marcil <marcilr@gmail.com>
+by Raymond E. Marcil <marcilr@gmail.com>
 
 
-Symbolic links in git
+Symbolic links in Git
 
 
 "There is an important caveat when creating symlinks that are
@@ -27,8 +27,8 @@ will always be able to find the source."
 
 Links
 =====
+symbolic-links.txt
 Symbolic links in Git
-Tue Sep 12 2017 -Espresso-Git
 mokacoding
 unit and acceptance testing, automation, productivity
 https://www.mokacoding.com/blog/symliks-in-git/
