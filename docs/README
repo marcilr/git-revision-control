@@ -12,3 +12,9 @@ config.txt
 
 set-default-text-editor.txt
   Set default text editor for git
+
+symbolic-links.txt
+  Symbolic links in Git
+  mokacoding
+  unit and acceptance testing, automation, productivity
+  https://www.mokacoding.com/blog/symliks-in-git/
