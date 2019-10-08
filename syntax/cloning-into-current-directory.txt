@@ -52,6 +52,33 @@ tags etc)
   stackoverflow.com/questions/30556438/git-cloning-into-current-directory
 
 
+Example:
+$ cd /net/dnr-atwfs1/vol/vol1/weblogs/scripts
+$ git init
+Initialized empty Git repository in \
+/net/dnr-atwfs1/vol/vol1/weblogs/scripts/.git/
+$ git remote add origin ssh://dnratwtfsp:22/Sandboxes/_git/scripts
+$ git fetch --all --prune
+Fetching origin
+$ git add reportsmonthlymanual-2.sh
+$ git commit reportsmonthlymanual-2.sh
+
+Push changes back to repo:
+$ git push origin master
+Counting objects: 6, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (6/6), 4.35 KiB, done.
+Total 6 (delta 0), reused 0 (delta 0)
+remote: Storing packfile... done (61 ms)
+remote: Storing index... done (57 ms)
+To ssh://dnratwtfsp:22/Sandboxes/_git/scripts
+ * [new branch]      master -> master
+$  
+
+
+
+
 Links
 =====
 Git cloning into current directory [duplicate]
