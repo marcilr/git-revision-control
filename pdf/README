@@ -16,4 +16,7 @@ tell-git-which-ssh-key-to-use.pdf
   How to tell Git which SSH Key to use
   Czar Pino
   Sep 10, 2017 · 1 min read
+  NOTE: Shortened to 1 good page with:
+        $ pdftk tell-git-which-ssh-key-to-use.pdf cat 2 output out.pdf
+        $ mv out.pdf tell-git-which-ssh-key-to-use.pdf 
   https://medium.com/@czarpino/how-to-tell-git-which-ssh-key-to-use-c8574fb243fd
