@@ -9,5 +9,8 @@ clients.txt
   git clients
   https://git-scm.com/download/gui/windows
 
+manifest
+  Manifest for resync application
+
 links.txt
   client related links
