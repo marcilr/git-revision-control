@@ -1,0 +1,9 @@
+#.gitignore
+# Created Thu 14 Nov 2019 03:26:47 PM AKST
+# by Raymond E. Marcil <marcilr@gmail.com>
+#
+# Files for git to ignore
+#
+.gitignore
+
+github-desktop/
