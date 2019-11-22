@@ -13,6 +13,23 @@ original remote repository. You can use foobar instead
 of origin if you like."
 --questions/5270760/
 
+
+Example
+=======
+$ git push --set-upstream origin master
+Enumerating objects: 6, done.
+Counting objects: 100% (6/6), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (6/6), 798 bytes | 399.00 KiB/s, done.
+Total 6 (delta 0), reused 0 (delta 0)
+To ssh://github.com/marcilr/tex-to-docx.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+$ 
+
+
+
 Links
 =====
 What's the meaning of 'origin' in 'git push origin master'
