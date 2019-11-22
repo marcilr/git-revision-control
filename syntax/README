@@ -30,6 +30,9 @@ partial-commit-during-a-merge.txt
       MikaelHalen
       stackoverflow.com/questions/5827944
 
+push.txt
+  push to repository
+
 push-origin.txt
   git push origin master
 
