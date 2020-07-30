@@ -1,0 +1,33 @@
+colorize-git-status-output.txt
+Created Thu 30 Jul 2020 02:06:16 PM AKDT
+Copyright (C) 2020 by Raymond E. Marcil <marcilr@gmail.com>
+
+
+Colorize git status output for filenames
+
+
+Was having a real hard time read untracked filenames,
+that were red on black, in 'git status' output.
+
+Discovered it was easy to set the color using
+"git config color.status.*" commands as follows:
+
+
+Very hard to see plain blue:
+$ git config color.status.changed blue
+
+Better:
+$ git config color.status.changed white
+
+Best:
+$ git config color.status.changed "blue normal bold"
+
+Best"
+$ git config color.status.untracked "green normal bold"
+
+
+Links
+=====
+How to colorize git-status output?
+Source for git config color.* syntax
+https://stackoverflow.com/questions/12795790/how-to-colorize-git-status-output
