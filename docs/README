@@ -5,6 +5,9 @@ Copyright (C) 2019 by Raymond E. Marcil <marcilr@gmail.com>
 
 Filelist
 ========
+colorize-git-status-output.txt
+  Colorize git status output for filenames
+
 config.txt
   Git configuration items:
     git config --global user.name "Your Name"
