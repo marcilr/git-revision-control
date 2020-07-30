@@ -12,12 +12,20 @@ that were red on black, in 'git status' output.
 Setting colors in ~/.gitconfig or ~/.git/config
 had no affect.
 
+
 Enable color output.  Required for configuration settings to work:
 $ git config --global color.ui true
 
+The --global is optional, if you want to make the coloring for the 
+current repository, ignore this and type it as:
 
-Possible colors:
+$ git config color.ui true
+--[SOLVED] How to Color Git using Ubuntu Terminal?
+  https://www.zyxware.com/articles/5736/solved-how-to-color-git-using-ubuntu-terminal
 
+
+Possible colors
+===============
 blue
 blue bold        <=== Best
 green
@@ -59,6 +67,16 @@ $ git config color.status.untracked "green normal bold"
 
 Links
 =====
+BASH Shell Change The Color of Shell Prompt on Linux or UNIX
+last updated July 21, 2018 in BASH Shell, Linux, UNIX
+https://www.cyberciti.biz/faq/bash-shell-change-the-color-of-my-shell-prompt-under-linux-or-unix/
+
+Customizing Git - Git Configuration
+https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration
+
+git-config - Get and set repository or global options
+https://git-scm.com/docs/git-config#Documentation/git-config.txt-colorstatusltslotgt
+
 How to colorize git-status output?
 Source for git config color.* syntax
 https://stackoverflow.com/questions/12795790/how-to-colorize-git-status-output
