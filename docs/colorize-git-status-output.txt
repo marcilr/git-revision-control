@@ -9,8 +9,39 @@ Colorize git status output for filenames
 Was having a real hard time read untracked filenames,
 that were red on black, in 'git status' output.
 
+Setting colors in ~/.gitconfig or ~/.git/config
+had no affect.
+
+Enable color output.  Required for configuration settings to work:
+$ git config --global color.ui true
+
+
+Possible colors:
+
+blue
+blue bold        <=== Best
+green
+green bold       <=== Best
+red              <=== Hard to see
+yellow
+yellow bold
+yellow reverse
+white            <=== Bit hard to see
+magenta
+magenta bold
+
+Required for configuration settings to work:
+$ git config --global color.ui true
+
+
 Discovered it was easy to set the color using
-"git config color.status.*" commands as follows:
+"git config color.status.*" 
+
+Used:
+$ git config color.status.changed blue                    <=== Very hard to see
+$ git config color.status.changed white                   <=== Better
+$ git config color.status.changed "blue normal bold"      <=== best
+$ git config color.status.untracked "green normal bold"   <=== Best
 
 
 Very hard to see plain blue:
@@ -31,3 +62,6 @@ Links
 How to colorize git-status output?
 Source for git config color.* syntax
 https://stackoverflow.com/questions/12795790/how-to-colorize-git-status-output
+
+[SOLVED] How to Color Git using Ubuntu Terminal?
+https://www.zyxware.com/articles/5736/solved-how-to-color-git-using-ubuntu-terminal
