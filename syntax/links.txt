@@ -16,3 +16,7 @@ https://git-scm.com/docs/git-ls-remote.html
 git-ls-remote(1) Manual Page
 git-ls-remote - List references in a remote repository
 https://mirrors.edge.kernel.org/pub/software/scm/git/docs/git-ls-remote.html
+
+How to colorize git-status output?
+https://stackoverflow.com/questions/12795790/how-to-colorize-git-status-output
+
