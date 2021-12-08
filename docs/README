@@ -21,3 +21,9 @@ symbolic-links.txt
   mokacoding
   unit and acceptance testing, automation, productivity
   https://www.mokacoding.com/blog/symliks-in-git/
+
+undo-a-commit-and-redo.txt
+  Undo a commit & redo
+  How do I undo the most recent local commits in Git?
+  Asked 12 years, 6 months ago, Active 13 days ago, Viewed 10.3m times
+  https://stackoverflow.com/questions/927358/how-do-i-undo-the-most-recent-local-commits-in-git
