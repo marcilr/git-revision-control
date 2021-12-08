@@ -1,0 +1,63 @@
+undo-a-commit-and-redo.txt
+Created Wed 08 Dec 2021 12:31:57 PM AKST
+Copyright (C) 2021 by Raymond E. Marcil <marcilr@gmail.com>
+
+
+Used this procedure Tue Dec 7, 2021 to undo a commit that
+deleted a few dozen files.  Worked well.
+
+
+Undo a commit & redo
+$ git commit -m "Something terribly misguided" # (0: Your Accident)
+$ git reset HEAD~                              # (1)
+[ edit files as necessary ]                    # (2)
+$ git add .                                    # (3)
+$ git commit -c ORIG_HEAD                      # (4)
+
+1. This command is responsible for the undo.  It will undo your 
+last commit while leaving your working tree (the state of your 
+files on disk) untouched.  You'll need to add them again before
+you can commit them again).
+
+2. Make corrections to working tree files.
+
+3. git add anything that you want to include in your new commit.
+
+4. Commit the changes, reusing the old commit message. 
+reset copied the old head to .git/ORIG_HEAD; commit with -c ORIG_HEAD 
+will open an editor, which initially contains the log message from 
+the old commit and allows you to edit it. If you do not need to edit 
+the message, you could use the -C option.
+
+Alternatively, to edit the previous commit (or just its commit message),
+commit --amend will add changes within the current index to the previous
+commit.
+
+To remove (not revert) a commit that has been pushed to the server,
+rewriting history with git push origin master --force is necessary.
+
+
+Further Reading
+===============
+How can I move HEAD back to a previous location? (Detached head) & Undo 
+commits
+
+The above answer will show you git reflog, which you can use to determine
+the SHA-1 for the commit to which you wish to revert.  Once you have this
+value, use the sequence of commands as explained above.
+
+HEAD~ is the same as HEAD~1. The article What is the HEAD in git? is 
+helpful if you want to uncommit multiple commits.
+
+edited Dec 21 '20 at 16:53
+community wiki
+47 revs, 39 users 15%
+Mark Amery
+
+
+Links
+=====
+Undo a commit & redo
+How do I undo the most recent local commits in Git?
+Asked 12 years, 6 months ago, Active 13 days ago, Viewed 10.3m times
+https://stackoverflow.com/questions/927358/how-do-i-undo-the-most-recent-local-commits-in-git
