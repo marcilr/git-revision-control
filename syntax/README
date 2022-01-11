@@ -8,6 +8,13 @@ Filelist
 cloning-into-current-directory.txt
   Git cloning into current directory
 
+gitignore-does-not-ignore-folder.txt
+  gitignore does not ignore folder
+  Asked 7 years, 6 months ago, Active 3 months ago, Viewed 120k times
+  https://stackoverflow.com/questions/24410208/gitignore-does-not-ignore-folder
+
+  This is definitely the solution to this git issue.
+
 links.txt
   Syntax related links
 
