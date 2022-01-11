@@ -1,0 +1,230 @@
+gitignore-does-not-ignore-folder.txt
+Created Tue 11 Jan 2022 11:35:26 AM AKST
+Copyright (C) 2022 by Raymond E. Marcil <marcilr@gmail.com>
+
+
+gitignore does not ignore folder
+Asked 7 years, 6 months ago
+Active 3 months ago
+Viewed 120k times
+
+Was having an issue were git status was listing directories
+despite them being listed in .gitignore
+
+This was definitely the solution:
+
+For me, the accepted answer was part of the solution, not the entire solution. 
+Maybe, the other steps that I'm about to post were obvious, but I missed them 
+first.  Here's the steps I took to ensure my .gitignore file ignored the folder 
+I wanted it to ignore:
+
+1. Commit any changes that you need to fix/change.
+2. Run this command: git rm -r --cached . (which removes everything from the 
+   git index in order to refresh your git repository)
+3. Then run this command: git add . (to add everything back to the repo)
+4. Finally, commit these changes using git commit -m ".gitignore Fixed"
+
+You can find the link to the article from where I found the solution here.[1]
+
+answered Dec 22 '17 at 16:15
+sikanderBabwani
+
+
+Tue 11 Jan 2022 11:39:52 AM AKST
+================================
+Under ~/git on malachite was initially getting:
+
+~/git$ git commit
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+	debian
+	disability-PRIOR-20220103/
+	disability-PRIOR/
+	git-crypt-key
+
+nothing added to commit but untracked files present
+~/git$
+
+To nenignly resolve the issue used:
+~/git$ git rm -r --cached .
+rm '.gitignore'
+rm 'README'
+rm 'TODO'
+rm 'git.txt'
+rm 'index.html'
+rm 'links.txt'
+rm 'manifest'
+rm 'pdf/.gitignore'
+rm 'pdf/README'
+rm 'pdf/docs/README'
+rm 'pdf/docs/books.txt'
+rm 'pdf/docs/printing-pdf-files.txt'
+rm 'pdf/editors/10-best-pdf-editors-for-linux.txt'
+rm 'pdf/editors/README'
+rm 'pdf/editors/links.txt'
+rm 'pdf/editors/master-pdf-editor-5.txt'
+rm 'pdf/editors/master-pdf-editor-invoice-20220107.pdf'
+rm 'pdf/manifest'
+rm 'pdf/syntax/README'
+rm 'pdf/syntax/csv-to-pdf.txt'
+rm 'pdf/syntax/extract-images.txt'
+rm 'pdf/viewers/README'
+rm 'pdf/viewers/best-15-pdf-readers.txt'
+rm 'pdf/viewers/links.txt'
+rm 'pdf/viewers/viewers-readers.txt'
+rm 'update.bat'
+~/git$ 
+
+~/git$ git add .
+warning: adding embedded git repository: disability-PRIOR-20220103
+hint: You've added another git repository inside your current repository.
+hint: Clones of the outer repository will not contain the contents of
+hint: the embedded repository and will not know how to obtain it.
+hint: If you meant to add a submodule, use:
+hint: 
+hint: 	git submodule add <url> disability-PRIOR-20220103
+hint: 
+hint: If you added this path by mistake, you can remove it from the
+hint: index with:
+hint: 
+hint: 	git rm --cached disability-PRIOR-20220103
+hint: 
+hint: See "git help submodule" for more information.
+warning: adding embedded git repository: disability-PRIOR
+~/git$ 
+
+~/git$ git rm -r --cached . 
+error: the following files have staged content different from both the
+file and the HEAD:
+    disability-PRIOR
+    disability-PRIOR-20220103
+(use -f to force removal)
+~/git$ mv disability-PRIOR ~/PRIOR/
+~/git$ mv disability-PRIOR-20220103/ ~/PRIOR/
+~/git$ ls ~/PRIOR/
+disability-PRIOR  disability-PRIOR-20220103
+~/git$ 
+
+~/git$ git rm -r --cached .
+rm 'README'
+rm 'TODO'
+rm 'debian'
+rm 'disability-PRIOR'
+rm 'disability-PRIOR-20220103'
+rm 'git-crypt-key'
+rm 'git.txt'
+rm 'index.html'
+rm 'links.txt'
+rm 'manifest'
+rm 'pdf/README'
+rm 'pdf/docs/README'
+rm 'pdf/docs/books.txt'
+rm 'pdf/docs/printing-pdf-files.txt'
+rm 'pdf/editors/10-best-pdf-editors-for-linux.txt'
+rm 'pdf/editors/README'
+rm 'pdf/editors/links.txt'
+rm 'pdf/editors/master-pdf-editor-5.txt'
+rm 'pdf/editors/master-pdf-editor-invoice-20220107.pdf'
+rm 'pdf/manifest'
+rm 'pdf/syntax/README'
+rm 'pdf/syntax/csv-to-pdf.txt'
+rm 'pdf/syntax/extract-images.txt'
+rm 'pdf/viewers/README'
+rm 'pdf/viewers/best-15-pdf-readers.txt'
+rm 'pdf/viewers/links.txt'
+rm 'pdf/viewers/viewers-readers.txt'
+rm 'update.bat'
+~/git$
+
+~/git$ git commit -m ".gitignore Fixed"
+[master 1b71d50] .gitignore Fixed
+ 4 files changed, 1 insertion(+), 106 deletions(-)
+ delete mode 100644 .gitignore
+ create mode 120000 debian
+ create mode 100644 git-crypt-key
+ delete mode 100644 pdf/.gitignore
+~/git$ 
+
+
+~/git$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+~/git$ 
+
+
+~/git$ git push
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (5/5), 536 bytes | 268.00 KiB/s, done.
+Total 5 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To github.com:marcilr/git.git
+   9964095..1b71d50  master -> master
+~/git$ 
+
+
+~/git$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+~/git$
+
+
+~/git$ git log index.html 
+commit 8db5b5db45f3a7ae84f47c4f98a422a05fb988c9
+Author: Raymond Marcil <marcilr@gmail.com>
+Date:   Tue Dec 28 18:21:14 2021 -0900
+
+    Removed index-PRIOR.html
+
+commit cf5e9f02439f7eee1c3432188cfce2a6d85e8bb1
+Author: Raymond Marcil <marcilr@gmail.com>
+Date:   Tue Dec 28 18:19:54 2021 -0900
+
+    index.html
+      Index to git repositories
+
+commit 035a030db7a8ebcf3b8ed7fc866d2469d7d72c5c
+Author: Raymond Marcil <marcilr@gmail.com>
+Date:   Thu Dec 16 11:48:02 2021 -0900
+
+    Migrating old index.html that was created for the Alaska
+    Department of Natural Resources on Fri Sep 6 08:16:34 AKDT 2019.
+
+commit 3a3de101b9881cbc2f5d1751cc0708b54a81402c
+Author: Raymond E. Marcil <remarcil@alaska.gov>
+Date:   Wed Sep 18 09:26:54 2019 -0800
+
+    Added DNR and Links headers
+
+commit ec6a969b588261a10bf18cc8a35856d559ccfa46
+Author: Raymond E. Marcil <remarcil@alaska.gov>
+Date:   Fri Sep 6 08:21:27 2019 -0800
+
+~/git$ 
+
+That did the trick.  The git commit history is still good.
+
+NOTE: Still need to potentially merge the ~/PRIOR/disability-PRIOR* 
+      directories.
+
+
+
+Links
+=====
+[1] here.
+https://digitizor.com/gitignore-not-ignoring-files-how-to-fix/
+
+gitignore does not ignore folder
+Asked 7 years, 6 months ago
+Active 3 months ago
+Viewed 120k times
+https://stackoverflow.com/questions/24410208/gitignore-does-not-ignore-folder
