@@ -74,3 +74,13 @@ nothing to commit, working tree clean
 
 Looks good.
 
+
+
+Links
+=====
+gitignore does not ignore folder
+Asked 7 years, 7 months ago, Active 4 months ago, Viewed 122k times
+In the future, you don't need to modify your ignores to add something ignored.
+git add -f ignored-file will add a file even if it's in your ignores. – 
+Chris Jun 25 '14 at 13:38
+https://stackoverflow.com/questions/24410208/gitignore-does-not-ignore-folder
