@@ -13,6 +13,15 @@ config.txt
     git config --global user.name "Your Name"
     git config --global user.email you@example.com
 
+gitignore-directory-not-ignored.txt
+  Getting  "Untracked files:" from git status dispite html/ being
+  in ~/git/.gitignore:
+
+  ~/git$ less .gitignore
+  ...
+  html/
+  ...
+
 set-default-text-editor.txt
   Set default text editor for git
 
