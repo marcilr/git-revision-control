@@ -1,0 +1,76 @@
+gitignore-directory-not-ignored.txt
+Created Mon 07 Feb 2022 09:29:00 AM AKST
+Copyright (C) 2022 by Raymond E. Marcil <marcilr@gmail.com>
+
+
+Mon 07 Feb 2022 09:29:00 AM AKST
+================================
+Under the primary ~/git directory I observed that the html/ repo
+was not being ignored despite having an entry in the ~/git/.gitignore file:
+
+
+Inspect "Untracked files" for html/ repo under main ~/git/ repo:
+$ cd ~/git
+~/git$ git status html
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	html
+
+nothing added to commit but untracked files present (use "git add" to track)
+~/git$
+
+The above "Untracked files:" was desplayed dispite html/ being 
+in ~/git/.gitignore:
+
+~/git$ less .gitignore
+...
+html/
+...
+
+The solution was to add the html/ repo, under the ~/git repo, 
+using 'git add -f html', commit, and archive repo to github
+with git push:
+
+~/git$ git add -f html
+~/git$ git commit
+[master ca1ae67] Added to alleviate "Untracked files" error despite html/ being in .gitignore:
+ 1 file changed, 1 insertion(+)
+ create mode 120000 html
+marcilr@malachite:~/git$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+~/git$ git push
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 434 bytes | 434.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To github.com:marcilr/git.git
+   5709b5f..ca1ae67  master -> master
+~/git$
+
+
+Added to alleviate "Untracked files" error despite html/
+being in .gitignore:
+
+~/git$
+
+~/git$ git status html
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+~/git$ 
+
+
+Looks good.
+
